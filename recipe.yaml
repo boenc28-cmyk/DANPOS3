@@ -1,0 +1,34 @@
+context:
+  name: danpos3
+  version: "3.0.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  path: .
+
+build:
+  number: 0
+  script:
+    - mkdir -p $PREFIX/bin
+    - cp danpos.py $PREFIX/bin/danpos
+    - cp dpeak.py $PREFIX/bin/dpeak
+    - cp dregion.py $PREFIX/bin/dregion
+    - chmod +x $PREFIX/bin/danpos $PREFIX/bin/dpeak $PREFIX/bin/dregion
+
+requirements:
+  host:
+    - python == 3.7.6
+  run:
+    - python == 3.7.6
+    - numpy == 1.18.5
+    - pysam == 0.16.0.1
+    - samtools == 1.7
+    - r-base == 4.0.1
+    - rpy2 == 3.3
+
+test:
+  commands:
+    - danpos --help

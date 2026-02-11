@@ -20,7 +20,8 @@ print("AVAILABLE python packages:")
 for pkg in available:
 	if pkg == "rpy2":
 		import rpy2
-		print(pkg + ": "+ str(rpy2.__version__))
+		import importlib_metadata
+		print(pkg + ": " + importlib_metadata.version("rpy2"))
 	elif pkg == "argparse":
 		import argparse
 		print (pkg + ": "+ str(argparse.__version__))
