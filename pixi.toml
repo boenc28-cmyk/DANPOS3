@@ -1,11 +1,11 @@
 [workspace]
 name = "DANPOS3"
 channels = ["conda-forge", "bioconda"]
-platforms = ["linux-64", "osx-64", "osx-arm64"]
+platforms = ["linux-64", "osx-64"]
 authors = ["Kaifu Chen", "Samantha Klasfeld", "Boen Chen <boenc28@gmail.com>"]
 description = "A toolkit for Dynamic Analysis of Nucleosome and Protein Occupancy by Sequencing"
-license = ""
-license-file = ""
+license = "GPL-3.0-or-later"
+license-file = "LICENSE"
 readme = "README.md"
 homepage = "https://sites.google.com/site/danposdoc/home"
 repository = "https://github.com/sklasfeld/DANPOS3"
@@ -19,8 +19,8 @@ name = "DANPOS3"
 version = "3.0.1"
 authors = ["Kaifu Chen", "Samantha Klasfeld", "Boen Chen <boenc28@gmail.com>"]
 description = "A toolkit for Dynamic Analysis of Nucleosome and Protein Occupancy by Sequencing"
-license = ""
-license-file = ""
+license = "GPL-3.0-or-later"
+license-file = "LICENSE"
 readme = "README.md"
 homepage = "https://sites.google.com/site/danposdoc/home"
 repository = "https://github.com/sklasfeld/DANPOS3"
@@ -28,7 +28,6 @@ documentation = "https://sites.google.com/site/danposdoc/b-documentation"
 
 [package.build]
 backend = { name = "pixi-build-python", version = "*", channels = [  "https://prefix.dev/pixi-build-backends",  "https://prefix.dev/conda-forge"] }
-
 
 [dependencies]
 python = "3.7.6.*"
@@ -38,3 +37,12 @@ numpy = "1.18.5.*"
 pysam = "0.16.0.1.*"
 rpy2 = "3.3.*"
 
+[package.build-dependencies]
+python = "3.7.6.*"
+setuptools = "*"
+wheel = "*"
+
+[package.host-dependencies]
+python = "3.7.6*"
+setuptools = "*"
+wheel = "*"
