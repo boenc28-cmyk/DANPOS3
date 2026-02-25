@@ -33,6 +33,11 @@ setup(name='DANPOS3',
       author_email='sjk314@gmail.com',
       license='GPLv3',
       packages=['danpos'],
+      entry_points={
+        'console_scripts': [
+            'danpos = danpos.danpos:main', 
+        ],
+      },
       install_requires=[
           "argparse",
           "numpy",
